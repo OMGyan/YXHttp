@@ -32,19 +32,21 @@ public class MainActivity extends AppCompatActivity {
         map2.put("url","https://blog.csdn.net/qq_35189116/article/details/80454677");
         map2.put("debug",false);
 
-//        YXHttp.sendJsonRequest("https://gank.io/api/add2gank",map2,false,"POST", bean1.class, new IJsonDataTransForm<bean1>() {
-//            @Override
-//            public void onSuccess(bean1 m) {
-//                 Log.i(TAG, "onSuccess: "+m.getMsg());
-//            }
-//            @Override
-//            public void onFailure(Throwable throwable) {}
-//        });
+        YXHttp.sendJsonRequest("https://gank.io/api/add2gank",map2,false,"POST", bean1.class, new IJsonDataTransForm<bean1>() {
+            @Override
+            public void onSuccess(bean1 m) {
+                 Log.i(TAG, "onSuccess: "+m.getMsg());
+            }
+            @Override
+            public void onFailure(Throwable throwable) {
+                Log.i(TAG, "onFailure: "+throwable.toString());
+            }
+        });
 
         /**
          * Get请求示例
          */
-        YXHttp.sendJsonRequest("http:cxxx",null,false,null,bean2.class, new IJsonDataTransForm<bean2>() {
+        /*YXHttp.sendJsonRequest("http:cxxx",null,false,null,bean2.class, new IJsonDataTransForm<bean2>() {
             @Override
             public void onSuccess(bean2 m) {
                 Log.i(TAG, "onSuccess: "+m.getResults().get(0).toString());
@@ -53,6 +55,6 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Throwable throwable) {
                 Log.i(TAG, "onFailure: "+throwable.toString());
             }
-        });
+        });*/
     }
 }
