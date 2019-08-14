@@ -29,6 +29,10 @@ public class HttpTask implements Runnable, Delayed {
 
     }
 
+    public boolean isRetry() {
+        return isRetry;
+    }
+
     public void setRetryCount(int retryCount) {
         this.retryCount = retryCount;
     }
